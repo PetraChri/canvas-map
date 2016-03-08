@@ -36,7 +36,7 @@ function reportPosition(position) {
     context.src = url;
     var maps = new Image();
     maps.onload = function () {
-        context.canvasImage(maps, 0 , 0, 400, 400);
+        context.drawImage(maps, 0 , 0, 400, 400);
     };
     maps.src = url;
 }
