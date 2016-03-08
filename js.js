@@ -28,15 +28,15 @@ function reportPosition(position) {
     var url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude +
         "&zoom=14&size=" + width + "x" + height + "&maptype=roadmap&markers=color:red%7C" + latitude + "," + longitude + "&key=" + "AIzaSyDwgmeeXC3CwrndWosNrI33wmwf0SxexJg";
     console.dir(url);
-    var draw = document.createElement("canvas");
-    document.querySelector("body").appendChild(draw);
-    draw.height = height;
-    draw.width = width;
+    var canvas = document.createElement("canvas");
+    document.querySelector("body").appendChild(canvas);
+    canvas.height = height;
+    canvas.width = width;
     context = draw.getContext("2d");
     context.src = url;
     var maps = new Image();
     maps.onload = function () {
-        context.drawImage(maps, 0 , 0, 400, 400);
+        context.canvasImage(maps, 0 , 0, 400, 400);
     };
     maps.src = url;
 }
