@@ -32,7 +32,7 @@ function reportPosition(position) {
     document.querySelector("body").appendChild(canvas);
     canvas.height = height;
     canvas.width = width;
-    context = draw.getContext("2d");
+    context = canvas.getContext("2d");
     context.src = url;
     var maps = new Image();
     maps.onload = function () {
